@@ -1,9 +1,9 @@
-# SpinX - Casino Gaming Platform Frontend
+# CozyCasino - Casino Gaming Platform Frontend
 
-Welcome to SpinX, a modern cryptocurrency casino gaming platform built with Next.js. This platform offers multiple provably fair games including Coinflip, Crash, Mines, and Roulette.
+Welcome to CozyCasino, a modern cryptocurrency casino gaming platform built with Next.js and powered by the Coreum blockchain. This platform offers multiple provably fair games including Coinflip, Crash, Mines, and Roulette.
 
 
-![SpinX Platform Dashboard](https://github.com/user-attachments/assets/93c1e56a-ce23-4e99-aec1-dc010fb5e6e3)   
+![CozyCasino Platform Dashboard](https://github.com/user-attachments/assets/93c1e56a-ce23-4e99-aec1-dc010fb5e6e3)
 *Main dashboard showing all available games*
 
 ## Support
@@ -469,7 +469,10 @@ House typically takes 5-10% fee
 
 This project uses:
 
-- **Framework:** [Next.js 14](https://nextjs.org) with App Router
+- **Blockchain:** [Coreum](https://coreum.com) - Enterprise-grade blockchain for Web3 applications
+- **Wallet Integration:** [Keplr Wallet](https://www.keplr.app/) - Cosmos ecosystem wallet
+- **Blockchain SDK:** [@cosmjs/stargate](https://github.com/cosmos/cosmjs) - Cosmos blockchain client
+- **Framework:** [Next.js 15](https://nextjs.org) with App Router
 - **UI Library:** [HeroUI](https://heroui.com) (React components)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com)
 - **State Management:** React Context API
@@ -483,7 +486,27 @@ This project uses:
 
 ## Quick Start
 
-First, run the development server:
+### Prerequisites
+
+Before running CozyCasino, you need:
+
+1. **Keplr Wallet Extension** - Install from [Keplr.app](https://www.keplr.app/download)
+2. **Node.js 18+** - Required for running the application
+3. **Coreum Tokens** - Get testnet tokens from [Coreum Faucet](https://docs.coreum.dev/tools-ecosystem/faucet.html)
+
+### Installation
+
+First, install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+Then run the development server:
 
 ```bash
 npm run dev
@@ -536,10 +559,58 @@ npm run dev
 
 ---
 
+## Coreum Blockchain Integration
+
+CozyCasino is built on the Coreum blockchain, providing secure, fast, and transparent gaming experiences.
+
+### Why Coreum?
+
+- **High Performance:** Fast transaction finality with low fees
+- **Enterprise-Grade:** Built for scalability and reliability
+- **Cosmos Ecosystem:** Compatible with IBC and other Cosmos chains
+- **Smart Tokens:** Advanced token management capabilities
+
+### Wallet Connection
+
+CozyCasino uses Keplr wallet for secure blockchain interactions:
+
+1. **Install Keplr:** Download from [keplr.app](https://www.keplr.app/download)
+2. **Connect Wallet:** Click "Connect Keplr" button in the navbar
+3. **Approve Chain:** Keplr will prompt to add the Coreum network
+4. **Start Playing:** Your wallet address will be displayed when connected
+
+### Network Configuration
+
+By default, CozyCasino connects to **Coreum Mainnet**:
+
+- **Chain ID:** `coreum-mainnet-1`
+- **RPC Endpoint:** `https://full-node.mainnet-1.coreum.dev:26657`
+- **Currency:** COREUM (ucore)
+
+To switch to testnet, edit `/src/providers/coreum.tsx`:
+
+```typescript
+// Change these constants:
+const COREUM_CHAIN_ID = "coreum-testnet-1";
+const COREUM_RPC_ENDPOINT = "https://full-node.testnet-1.coreum.dev:26657";
+```
+
+### Blockchain Features
+
+- **Wallet Authentication:** Connect with Keplr for secure access
+- **Balance Display:** Real-time COREUM balance updates
+- **Transaction Signing:** Sign game transactions securely
+- **Provably Fair:** On-chain verification of game outcomes
+
+---
+
 ## Learn More
 
 To learn more about the technologies used:
 
+- [Coreum Documentation](https://docs.coreum.dev) - Learn about Coreum blockchain
+- [Keplr Wallet Guide](https://help.keplr.app) - Keplr wallet documentation
+- [CosmJS Documentation](https://cosmos.github.io/cosmjs) - Cosmos JavaScript library
 - [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API
 - [Next.js Tutorial](https://nextjs.org/learn) - Interactive Next.js tutorial
 - [Tailwind CSS](https://tailwindcss.com/docs) - Utility-first CSS framework
