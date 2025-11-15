@@ -10,9 +10,24 @@ export const MenuList = [
         title:"Leaderboard"
     },
     {
+        icon:"🚀",
+        path:"crash",
+        title:"Crash Game"
+    },
+    {
+        icon:"🪙",
+        path:"coinflip",
+        title:"Coin Flip"
+    },
+    {
+        icon:"🎰",
+        path:"slots",
+        title:"Slots"
+    },
+    {
         icon:"💣",
         path:"mine",
-        title:"Mine"
+        title:"Mines"
     },
     {
         icon:"🃏",
@@ -20,12 +35,7 @@ export const MenuList = [
         title:"Video Poker"
     },
     {
-        icon:"🚀",
-        path:"crash",
-        title:"Crash Game"
-    },
-    {
-        icon:"🎰",
+        icon:"🎯",
         path:"slide",
         title:"Slide"
     },
