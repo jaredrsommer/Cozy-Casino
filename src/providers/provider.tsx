@@ -6,9 +6,24 @@ import { HeroUIProvider } from '@heroui/react'
 import { useEffect, useRef, useState } from 'react';
 import io from "socket.io-client";
 import { CoreumProvider } from './coreum';
+import ToastProvider from './ToastProvider';
+import { ChatProvider } from '@/context/chatcontext';
+import { useCoreumWallet } from './coreum';
 
 // Export individual socket connections
 const crashSocket = io(`${API_URL}/crashx`);
+
+// Inner component to access Coreum wallet context
+function ProvidersInner({ children }: { children: React.ReactNode }) {
+  const { address } = useCoreumWallet();
+
+  return (
+    <ChatProvider userAddress={address}>
+      <ToastProvider />
+      {children}
+    </ChatProvider>
+  );
+}
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -40,7 +55,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
       />
       <SocketContext.Provider value={crashSocket}>
         <CoreumProvider>
-          {children}
+          <ProvidersInner>
+            {children}
+          </ProvidersInner>
         </CoreumProvider>
       </SocketContext.Provider>
     </HeroUIProvider>

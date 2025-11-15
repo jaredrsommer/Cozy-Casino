@@ -1,21 +1,41 @@
 export const MenuList = [
     {
-        icon:"",
-        path:"mine",
-        title:"Mine"
+        icon:"📊",
+        path:"dashboard",
+        title:"Dashboard"
     },
     {
-        icon:"",
-        path:"videopoker",
-        title:"Video Poker"
+        icon:"🏆",
+        path:"leaderboard",
+        title:"Leaderboard"
     },
     {
-        icon:"",
+        icon:"🚀",
         path:"crash",
         title:"Crash Game"
     },
     {
-        icon:"",
+        icon:"🪙",
+        path:"coinflip",
+        title:"Coin Flip"
+    },
+    {
+        icon:"🎰",
+        path:"slots",
+        title:"Slots"
+    },
+    {
+        icon:"💣",
+        path:"mine",
+        title:"Mines"
+    },
+    {
+        icon:"🃏",
+        path:"videopoker",
+        title:"Video Poker"
+    },
+    {
+        icon:"🎯",
         path:"slide",
         title:"Slide"
     },
